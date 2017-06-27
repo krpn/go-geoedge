@@ -10,7 +10,7 @@ Tested on API version: **3.4.25**.
 ## Installation
 
 ```
-go get github.com/krpn/go-geoedge
+go get github.com/krpn/go-geoedge/geoedge
 ```
 
 ## Example Usage

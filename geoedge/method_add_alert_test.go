@@ -13,7 +13,7 @@ func TestAddAlertRequest(t *testing.T) {
 			{
 				Method: "POST",
 				Url:    apiUrl + "alerts",
-				Body:   []byte(`locations=NZ%2CAU&name=Alert+1&notification_emails=test@example.com%2Ctest2@example.com&notification_time=2&trigger_ad_auto_play_sound=1&trigger_ad_video_max_length=15&trigger_scan_malware=1`),
+				Body:   []byte(`locations=NZ%2CAU&name=Alert+1&notification_emails=test%40example.com%2Ctest2%40example.com&notification_time=2&trigger_ad_auto_play_sound=1&trigger_ad_video_max_length=15&trigger_scan_malware=1`),
 				Headers: map[string]string{
 					"Host":          parsedUrl.Host,
 					"Authorization": "testToken",

@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"net/url"
 	"sort"
-	"strings"
 )
 
 func structToUrlencodedFormat(structObj interface{}) ([]byte, error) {
@@ -38,8 +37,6 @@ func structToUrlencodedFormat(structObj interface{}) ([]byte, error) {
 	var result string
 	for _, key := range keys {
 		val := url.QueryEscape(fmt.Sprint(tempMap[key]))
-		val = strings.Replace(val, "%40", "@", -1) // fix emails
-
 		result += fmt.Sprintf("%v=%v&", key, val)
 	}
 	result = result[:len(result)-1]

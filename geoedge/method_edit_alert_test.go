@@ -13,7 +13,7 @@ func TestEditAlertRequest(t *testing.T) {
 			{
 				Method: "PUT",
 				Url:    apiUrl + "alerts/1297cef3cdf39c5525b457d34c6b05ae",
-				Body:   []byte(`locations=CA%2CY0&name=Alert+1+-+altered&notification_emails=test3@example.com&notification_time=0&trigger_ad_auto_play_sound=1&trigger_ad_video_max_length=30&trigger_scan_malware=0`),
+				Body:   []byte(`locations=CA%2CY0&name=Alert+1+-+altered&notification_emails=test3%40example.com&notification_time=0&trigger_ad_auto_play_sound=1&trigger_ad_video_max_length=30&trigger_scan_malware=0`),
 				Headers: map[string]string{
 					"Host":          parsedUrl.Host,
 					"Authorization": "testToken",

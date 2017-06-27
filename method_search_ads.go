@@ -7,7 +7,7 @@ import (
 
 // Request
 type searchAdsRequest struct {
-	api *geoedgeApi
+	api *api
 
 	MinDatetime string `json:"min_datetime"`
 
@@ -20,7 +20,7 @@ type searchAdsRequest struct {
 	Limit       *int    `json:"limit,omitempty"`
 }
 
-func (api *geoedgeApi) SearchAdsRequest(minDatetime time.Time, options ...searchAdsRequestOption) *searchAdsRequest {
+func (api *api) SearchAdsRequest(minDatetime time.Time, options ...searchAdsRequestOption) *searchAdsRequest {
 	request := searchAdsRequest{
 		api:         api,
 		MinDatetime: minDatetime.Format("2006-01-02 15:04:05"),

@@ -7,13 +7,13 @@ import (
 
 // Request
 type getAdRequest struct {
-	api *geoedgeApi
+	api *api
 
 	AdId            string
 	ExtraDataParams *int
 }
 
-func (api *geoedgeApi) GetAdRequest(adId string, options ...getAdRequestOption) *getAdRequest {
+func (api *api) GetAdRequest(adId string, options ...getAdRequestOption) *getAdRequest {
 	request := getAdRequest{
 		api:  api,
 		AdId: adId,

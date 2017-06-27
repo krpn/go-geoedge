@@ -7,7 +7,7 @@ import (
 
 // Request
 type searchAlertsHistoryRequest struct {
-	api *geoedgeApi
+	api *api
 
 	AlertId       *string `json:"alert_id,omitempty"`
 	ProjectId     *string `json:"project_id,omitempty"`
@@ -20,7 +20,7 @@ type searchAlertsHistoryRequest struct {
 	Limit         *int    `json:"limit,omitempty"`
 }
 
-func (api *geoedgeApi) SearchAlertsHistoryRequest(options ...searchAlertsHistoryRequestOption) *searchAlertsHistoryRequest {
+func (api *api) SearchAlertsHistoryRequest(options ...searchAlertsHistoryRequestOption) *searchAlertsHistoryRequest {
 	request := searchAlertsHistoryRequest{api: api}
 
 	for _, option := range options {

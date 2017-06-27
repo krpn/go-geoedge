@@ -4,7 +4,7 @@ import "strings"
 
 // Request
 type addAlertRequest struct {
-	api *geoedgeApi
+	api *api
 
 	Name string `json:"name"`
 
@@ -92,7 +92,7 @@ type addAlertRequest struct {
 	TriggerVpaidFormat                          *int    `json:"trigger_vpaid_format,omitempty"`
 }
 
-func (api *geoedgeApi) AddAlertRequestRequest(name string, options ...addAlertRequestOption) *addAlertRequest {
+func (api *api) AddAlertRequestRequest(name string, options ...addAlertRequestOption) *addAlertRequest {
 	request := addAlertRequest{
 		api:  api,
 		Name: name,

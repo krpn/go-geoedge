@@ -4,12 +4,12 @@ import "strings"
 
 // Request
 type scanProjectRequest struct {
-	api *geoedgeApi
+	api *api
 
 	ProjectIds []string `json:"project_id"`
 }
 
-func (api *geoedgeApi) ScanProjectRequest(projectIds []string) *scanProjectRequest {
+func (api *api) ScanProjectRequest(projectIds []string) *scanProjectRequest {
 	return &scanProjectRequest{
 		api:        api,
 		ProjectIds: projectIds,

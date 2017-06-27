@@ -2,12 +2,12 @@ package geoedge
 
 // Request
 type getAlertHistoryRequest struct {
-	api *geoedgeApi
+	api *api
 
 	AlertHistoryId string
 }
 
-func (api *geoedgeApi) GetAlertHistoryRequest(alertHistoryId string) *getAlertHistoryRequest {
+func (api *api) GetAlertHistoryRequest(alertHistoryId string) *getAlertHistoryRequest {
 	return &getAlertHistoryRequest{
 		api:            api,
 		AlertHistoryId: alertHistoryId,

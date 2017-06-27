@@ -2,12 +2,12 @@ package geoedge
 
 // Request
 type getAlertRequest struct {
-	api *geoedgeApi
+	api *api
 
 	AlertId string
 }
 
-func (api *geoedgeApi) GetAlertRequest(AlertId string) *getAlertRequest {
+func (api *api) GetAlertRequest(AlertId string) *getAlertRequest {
 	return &getAlertRequest{
 		api:     api,
 		AlertId: AlertId,

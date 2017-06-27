@@ -7,12 +7,12 @@ import (
 
 // Request
 type addMultipleProjectsRequest struct {
-	api *geoedgeApi
+	api *api
 
 	AddProjectRequests []*addProjectRequest
 }
 
-func (api *geoedgeApi) AddMultipleProjectsRequest(addProjectRequests ...*addProjectRequest) *addMultipleProjectsRequest {
+func (api *api) AddMultipleProjectsRequest(addProjectRequests ...*addProjectRequest) *addMultipleProjectsRequest {
 	return &addMultipleProjectsRequest{
 		api:                api,
 		AddProjectRequests: addProjectRequests,

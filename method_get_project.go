@@ -2,12 +2,12 @@ package geoedge
 
 // Request
 type getProjectRequest struct {
-	api *geoedgeApi
+	api *api
 
 	projectId string
 }
 
-func (api *geoedgeApi) GetProjectRequest(projectId string) *getProjectRequest {
+func (api *api) GetProjectRequest(projectId string) *getProjectRequest {
 	return &getProjectRequest{
 		api:       api,
 		projectId: projectId,

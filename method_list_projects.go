@@ -2,13 +2,13 @@ package geoedge
 
 // Request
 type listProjectsRequest struct {
-	api *geoedgeApi
+	api *api
 
 	Offset *int `json:"offset,omitempty"`
 	Limit  *int `json:"limit,omitempty"`
 }
 
-func (api *geoedgeApi) ListProjectsRequest(options ...listProjectsRequestOption) *listProjectsRequest {
+func (api *api) ListProjectsRequest(options ...listProjectsRequestOption) *listProjectsRequest {
 	request := listProjectsRequest{api: api}
 
 	for _, option := range options {

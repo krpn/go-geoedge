@@ -4,7 +4,7 @@ import "strings"
 
 // Request
 type addProjectRequest struct {
-	api *geoedgeApi
+	api *api
 
 	Name      string `json:"name"`
 	Tag       string `json:"tag"`
@@ -32,7 +32,7 @@ type addProjectRequest struct {
 	Useragents                          *string `json:"useragents,omitempty"`
 }
 
-func (api *geoedgeApi) AddProjectRequestRequest(
+func (api *api) AddProjectRequestRequest(
 	name, tag string,
 	autoScan, scanType int,
 	locations []string,

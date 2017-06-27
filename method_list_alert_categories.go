@@ -2,10 +2,10 @@ package geoedge
 
 // Request
 type listAlertCategoriesRequest struct {
-	api *geoedgeApi
+	api *api
 }
 
-func (api *geoedgeApi) ListAlertCategoriesRequest() *listAlertCategoriesRequest {
+func (api *api) ListAlertCategoriesRequest() *listAlertCategoriesRequest {
 	return &listAlertCategoriesRequest{api: api}
 }
 

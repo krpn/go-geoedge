@@ -4,12 +4,12 @@ import "strings"
 
 // Request
 type deleteAlertRequest struct {
-	api *geoedgeApi
+	api *api
 
 	AlertIds []string
 }
 
-func (api *geoedgeApi) DeleteAlertRequest(alertIds []string) *deleteAlertRequest {
+func (api *api) DeleteAlertRequest(alertIds []string) *deleteAlertRequest {
 	return &deleteAlertRequest{
 		api:      api,
 		AlertIds: alertIds,

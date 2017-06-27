@@ -7,15 +7,15 @@ import (
 	"strings"
 )
 
-type geoedgeApi struct {
+type api struct {
 	url            string
 	regularHeaders map[string]string
-	core           geoedgeApiCoreInterface
+	core           apiCoreInterface
 }
 
-func getApi(authorizationToken string, core geoedgeApiCoreInterface) *geoedgeApi {
+func getApi(authorizationToken string, core apiCoreInterface) *api {
 	parsedUrl, _ := url.Parse(apiUrl)
-	return &geoedgeApi{
+	return &api{
 		url: apiUrl,
 		regularHeaders: map[string]string{
 			"Host":          parsedUrl.Host,
@@ -25,15 +25,15 @@ func getApi(authorizationToken string, core geoedgeApiCoreInterface) *geoedgeApi
 	}
 }
 
-func NewApi(authorizationToken string) *geoedgeApi {
-	return getApi(authorizationToken, &geoedgeApiCore{})
+func NewApi(authorizationToken string) *api {
+	return getApi(authorizationToken, &apiCore{})
 }
 
-func NewApiMocked(authorizationToken string, mockData []MockData) *geoedgeApi {
-	return getApi(authorizationToken, &geoedgeApiCoreMock{data: mockData})
+func NewApiMocked(authorizationToken string, mockData []MockData) *api {
+	return getApi(authorizationToken, &apiCoreMock{data: mockData})
 }
 
-func (api *geoedgeApi) makeRequest(
+func (api *api) makeRequest(
 	method string, urlParams string,
 	body []byte,
 	extraHeaders map[string]string,
@@ -41,7 +41,7 @@ func (api *geoedgeApi) makeRequest(
 
 	methodConfig, ok := apiMethods[method]
 	if !ok {
-		return fmt.Errorf("Unknown Geoedge API Method: %v.", method)
+		return fmt.Errorf("Unknown GeoEdge Ad Verification API Method: %v.", method)
 	}
 
 	fullUrl := api.url + methodConfig.path
@@ -79,7 +79,7 @@ func (api *geoedgeApi) makeRequest(
 	}
 
 	if respRaw.Status.Code != requestStatusSuccess {
-		return fmt.Errorf("Geoedge unsuccessfull result: %v, %v",
+		return fmt.Errorf("GeoEdge Ad Verification API unsuccessfull result: %v, %v",
 			respRaw.Status.Code,
 			respRaw.Status.Message)
 	}

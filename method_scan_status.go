@@ -4,12 +4,12 @@ import "strconv"
 
 // Request
 type scanStatusRequest struct {
-	api *geoedgeApi
+	api *api
 
 	ScanId string
 }
 
-func (api *geoedgeApi) ScanStatusRequest(scanId string) *scanStatusRequest {
+func (api *api) ScanStatusRequest(scanId string) *scanStatusRequest {
 	return &scanStatusRequest{
 		api:    api,
 		ScanId: scanId,

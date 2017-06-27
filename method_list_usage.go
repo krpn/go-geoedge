@@ -2,10 +2,10 @@ package geoedge
 
 // Request
 type listUsageRequest struct {
-	api *geoedgeApi
+	api *api
 }
 
-func (api *geoedgeApi) ListUsageRequest() *listUsageRequest {
+func (api *api) ListUsageRequest() *listUsageRequest {
 	return &listUsageRequest{api: api}
 }
 

@@ -2,12 +2,12 @@ package geoedge
 
 // Request
 type whitelistAlertHistoryRequest struct {
-	api *geoedgeApi
+	api *api
 
 	AlertHistoryId string
 }
 
-func (api *geoedgeApi) WhitelistAlertHistoryRequest(alertHistoryId string) *whitelistAlertHistoryRequest {
+func (api *api) WhitelistAlertHistoryRequest(alertHistoryId string) *whitelistAlertHistoryRequest {
 	return &whitelistAlertHistoryRequest{
 		api:            api,
 		AlertHistoryId: alertHistoryId,

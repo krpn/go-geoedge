@@ -4,7 +4,7 @@ import "strings"
 
 // Request
 type editProjectRequest struct {
-	api *geoedgeApi
+	api *api
 
 	ProjectId string `json:"-"`
 
@@ -21,7 +21,7 @@ type editProjectRequest struct {
 	Useragents    *string `json:"useragents,omitempty"`
 }
 
-func (api *geoedgeApi) EditProjectRequest(projectId string, options ...editProjectRequestOption) *editProjectRequest {
+func (api *api) EditProjectRequest(projectId string, options ...editProjectRequestOption) *editProjectRequest {
 	request := editProjectRequest{
 		api:       api,
 		ProjectId: projectId,

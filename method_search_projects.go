@@ -2,13 +2,13 @@ package geoedge
 
 // Request
 type searchProjectsRequest struct {
-	api *geoedgeApi
+	api *api
 
 	Tag  *string `json:"tag,omitempty"`
 	Name *string `json:"name,omitempty"`
 }
 
-func (api *geoedgeApi) SearchProjectsRequest(options ...searchProjectsRequestOption) *searchProjectsRequest {
+func (api *api) SearchProjectsRequest(options ...searchProjectsRequestOption) *searchProjectsRequest {
 	request := searchProjectsRequest{api: api}
 
 	for _, option := range options {

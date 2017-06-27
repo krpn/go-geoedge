@@ -2,10 +2,10 @@ package geoedge
 
 // Request
 type triggerTypesRequest struct {
-	api *geoedgeApi
+	api *api
 }
 
-func (api *geoedgeApi) TriggerTypesRequest() *triggerTypesRequest {
+func (api *api) TriggerTypesRequest() *triggerTypesRequest {
 	return &triggerTypesRequest{api: api}
 }
 

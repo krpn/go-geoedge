@@ -4,12 +4,12 @@ import "strings"
 
 // Request
 type deleteProjectRequest struct {
-	api *geoedgeApi
+	api *api
 
 	ProjectIds []string
 }
 
-func (api *geoedgeApi) DeleteProjectRequest(projectIds []string) *deleteProjectRequest {
+func (api *api) DeleteProjectRequest(projectIds []string) *deleteProjectRequest {
 	return &deleteProjectRequest{
 		api:        api,
 		ProjectIds: projectIds,

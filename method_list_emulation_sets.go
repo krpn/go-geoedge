@@ -2,10 +2,10 @@ package geoedge
 
 // Request
 type listEmulationSetsRequest struct {
-	api *geoedgeApi
+	api *api
 }
 
-func (api *geoedgeApi) ListEmulationSetsRequest() *listEmulationSetsRequest {
+func (api *api) ListEmulationSetsRequest() *listEmulationSetsRequest {
 	return &listEmulationSetsRequest{api: api}
 }
 

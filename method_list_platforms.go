@@ -2,10 +2,10 @@ package geoedge
 
 // Request
 type listPlatformsRequest struct {
-	api *geoedgeApi
+	api *api
 }
 
-func (api *geoedgeApi) ListPlatformsRequest() *listPlatformsRequest {
+func (api *api) ListPlatformsRequest() *listPlatformsRequest {
 	return &listPlatformsRequest{api: api}
 }
 

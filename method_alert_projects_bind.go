@@ -4,7 +4,7 @@ import "strings"
 
 // Request
 type alertProjectsBindRequest struct {
-	api *geoedgeApi
+	api *api
 
 	AlertId    string `json:"-"`
 	ProjectIds string `json:"projects"`
@@ -12,7 +12,7 @@ type alertProjectsBindRequest struct {
 	ActionType *int `json:"action_type,omitempty"`
 }
 
-func (api *geoedgeApi) AlertProjectsBindRequest(
+func (api *api) AlertProjectsBindRequest(
 	alertId string,
 	projectIds []string,
 	options ...alertProjectsBindRequestOption) *alertProjectsBindRequest {

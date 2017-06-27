@@ -20,7 +20,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/krpn/go-geoedge"
+	"github.com/krpn/go-geoedge/geoedge"
 )
 
 const myAuthorizationToken = "myAwesomeToken"

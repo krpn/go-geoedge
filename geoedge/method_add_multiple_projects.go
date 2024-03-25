@@ -9,10 +9,10 @@ import (
 type addMultipleProjectsRequest struct {
 	api *api
 
-	AddProjectRequests []*addProjectRequest
+	AddProjectRequests []*AddProjectRequest
 }
 
-func (api *api) AddMultipleProjectsRequest(addProjectRequests ...*addProjectRequest) *addMultipleProjectsRequest {
+func (api *api) AddMultipleProjectsRequest(addProjectRequests ...*AddProjectRequest) *addMultipleProjectsRequest {
 	return &addMultipleProjectsRequest{
 		api:                api,
 		AddProjectRequests: addProjectRequests,

@@ -3,7 +3,7 @@ package geoedge
 import "strings"
 
 // Request
-type addProjectRequest struct {
+type AddProjectRequest struct {
 	api *api
 
 	Name      string `json:"name"`
@@ -36,9 +36,9 @@ func (api *api) AddProjectRequestRequest(
 	name, tag string,
 	autoScan, scanType int,
 	locations []string,
-	options ...addProjectRequestOption) *addProjectRequest {
+	options ...addProjectRequestOption) *AddProjectRequest {
 
-	request := addProjectRequest{
+	request := AddProjectRequest{
 		api:       api,
 		Name:      name,
 		Tag:       tag,
@@ -60,7 +60,7 @@ type addProjectResponce struct {
 }
 
 // Do
-func (request *addProjectRequest) Do() (projectId string, err error) {
+func (request *AddProjectRequest) Do() (projectId string, err error) {
 	reqBody, err := structToUrlencodedFormat(request)
 	if err != nil {
 		return
@@ -81,115 +81,115 @@ func (request *addProjectRequest) Do() (projectId string, err error) {
 }
 
 // Options
-type addProjectRequestOption func(*addProjectRequest)
+type addProjectRequestOption func(*AddProjectRequest)
 
 func AddProjectRequestTimesPerDay(timesPerDay int) addProjectRequestOption {
-	return func(request *addProjectRequest) {
+	return func(request *AddProjectRequest) {
 		request.TimesPerDay = &timesPerDay
 	}
 }
 
 func AddProjectRequestEmulators(emulators []string) addProjectRequestOption {
-	return func(request *addProjectRequest) {
+	return func(request *AddProjectRequest) {
 		emulatorsStr := strings.Join(emulators, ",")
 		request.Emulators = &emulatorsStr
 	}
 }
 
 func AddProjectRequestEmulationSets(emulationSets []string) addProjectRequestOption {
-	return func(request *addProjectRequest) {
+	return func(request *AddProjectRequest) {
 		emulationSetsStr := strings.Join(emulationSets, ",")
 		request.EmulationSets = &emulationSetsStr
 	}
 }
 func AddProjectRequestEmulationType(emulationType int) addProjectRequestOption {
-	return func(request *addProjectRequest) {
+	return func(request *AddProjectRequest) {
 		request.EmulationType = &emulationType
 	}
 }
 
 func AddProjectRequestExtLineitemId(extLineitemId string) addProjectRequestOption {
-	return func(request *addProjectRequest) {
+	return func(request *AddProjectRequest) {
 		request.ExtLineitemId = &extLineitemId
 	}
 }
 
 func AddProjectRequestExtCreativeId(extCreativeId string) addProjectRequestOption {
-	return func(request *addProjectRequest) {
+	return func(request *AddProjectRequest) {
 		request.ExtCreativeId = &extCreativeId
 	}
 }
 
 func AddProjectRequestTopUrls(topUrls []string) addProjectRequestOption {
-	return func(request *addProjectRequest) {
+	return func(request *AddProjectRequest) {
 		topUrlsStr := strings.Join(topUrls, ",")
 		request.TopUrls = &topUrlsStr
 	}
 }
 
 func AddProjectRequestTriggerAdMaxFileSize(triggerAdMaxFileSize int) addProjectRequestOption {
-	return func(request *addProjectRequest) {
+	return func(request *AddProjectRequest) {
 		request.TriggerAdMaxFileSize = &triggerAdMaxFileSize
 	}
 }
 
 func AddProjectRequestTriggerAdPoliteMaxDownloadSize(triggerAdPoliteMaxDownloadSize int) addProjectRequestOption {
-	return func(request *addProjectRequest) {
+	return func(request *AddProjectRequest) {
 		request.TriggerAdPoliteMaxDownloadSize = &triggerAdPoliteMaxDownloadSize
 	}
 }
 
 func AddProjectRequestTriggerAdMaxLoadTime(triggerAdMaxLoadTime int) addProjectRequestOption {
-	return func(request *addProjectRequest) {
+	return func(request *AddProjectRequest) {
 		request.TriggerAdMaxLoadTime = &triggerAdMaxLoadTime
 	}
 }
 
 func AddProjectRequestTriggerAdMaxLoadTimeFromStart(triggerAdMaxLoadTimeFromStart int) addProjectRequestOption {
-	return func(request *addProjectRequest) {
+	return func(request *AddProjectRequest) {
 		request.TriggerAdMaxLoadTimeFromStart = &triggerAdMaxLoadTimeFromStart
 	}
 }
 
 func AddProjectRequestTriggerAdMaxAllowedDimensions(triggerAdMaxAllowedDimensions []string) addProjectRequestOption {
-	return func(request *addProjectRequest) {
+	return func(request *AddProjectRequest) {
 		triggerAdMaxAllowedDimensionsStr := strings.Join(triggerAdMaxAllowedDimensions, ",")
 		request.TriggerAdMaxAllowedDimensions = &triggerAdMaxAllowedDimensionsStr
 	}
 }
 
 func AddProjectRequestTriggerAdMaxAllowedDimensionsMargin(triggerAdMaxAllowedDimensionsMargin int) addProjectRequestOption {
-	return func(request *addProjectRequest) {
+	return func(request *AddProjectRequest) {
 		request.TriggerAdMaxAllowedDimensionsMargin = &triggerAdMaxAllowedDimensionsMargin
 	}
 }
 func AddProjectRequestTriggerScanWithHttpOverHttps(triggerScanWithHttpOverHttps int) addProjectRequestOption {
-	return func(request *addProjectRequest) {
+	return func(request *AddProjectRequest) {
 		request.TriggerScanWithHttpOverHttps = &triggerScanWithHttpOverHttps
 	}
 }
 
 func AddProjectRequestNotificationEmail(notificationEmail []string) addProjectRequestOption {
-	return func(request *addProjectRequest) {
+	return func(request *AddProjectRequest) {
 		notificationEmailStr := strings.Join(notificationEmail, ",")
 		request.NotificationEmail = &notificationEmailStr
 	}
 }
 
 func AddProjectRequestNotificationTime(notificationTime int) addProjectRequestOption {
-	return func(request *addProjectRequest) {
+	return func(request *AddProjectRequest) {
 		request.NotificationTime = &notificationTime
 	}
 }
 
 func AddProjectRequestAlertPixelNotification(alertPixelNotification int) addProjectRequestOption {
-	return func(request *addProjectRequest) {
+	return func(request *AddProjectRequest) {
 		request.AlertPixelNotification = &alertPixelNotification
 	}
 }
 
 func AddProjectRequestUseragents(useragents []string) addProjectRequestOption {
-	return func(request *addProjectRequest) {
+	return func(request *AddProjectRequest) {
 		useragentsStr := strings.Join(useragents, ",")
 		request.Useragents = &useragentsStr
 	}
